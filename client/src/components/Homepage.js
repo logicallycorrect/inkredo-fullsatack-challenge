@@ -12,8 +12,8 @@ class Homepage extends Component {
   }
   componentDidMount() {
     this.props.dispatch(
-      getAllCompany(dataStatus => {
-        if (dataStatus) {
+      getAllCompany(status => {
+        if (status) {
           this.setState({
             isLoading: false
           });

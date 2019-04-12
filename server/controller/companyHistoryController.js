@@ -97,11 +97,17 @@ module.exports = {
                     employee.companyHistory.push(employee.currentCompany);
                     employee.currentCompany = null;
 
-                    employee.save();
-
-                    return res.status(201).json({
-                      success: true,
-                      message: " Company Left"
+                    employee.save(err => {
+                      if (err)
+                        return res.status(404).json({
+                          success: false,
+                          message: err
+                        });
+                      else
+                        return res.status(201).json({
+                          success: true,
+                          message: " Company Left"
+                        });
                     });
                   } // end of else
                 }

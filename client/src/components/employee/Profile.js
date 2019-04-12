@@ -37,8 +37,8 @@ class Profile extends Component {
   redirect = success => {
     if (success) {
       this.props.dispatch(
-        getProfile(dataStatus => {
-          if (dataStatus) {
+        getProfile(status => {
+          if (status) {
             this.props.history.push("/");
           }
         })

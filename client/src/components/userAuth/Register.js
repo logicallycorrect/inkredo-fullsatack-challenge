@@ -79,7 +79,7 @@ class Register extends Component {
           />
           <label>Email</label>
           <input
-            type="text"
+            type="email"
             name="email"
             onChange={this.updateValue}
             required

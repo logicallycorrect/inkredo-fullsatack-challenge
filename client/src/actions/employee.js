@@ -66,9 +66,11 @@ export function handleLogout() {
 // Get user details
 export function getProfile(cb) {
   return dispatch => {
+    console.log("befoe fetch");
     fetch(Type.URL + "/profile")
       .then(response => response.json())
       .then(data => {
+        console.log(data, "backend check");
         dispatch({
           type: Type.GET_PROFILE,
           employee: data.employee

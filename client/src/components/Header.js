@@ -14,7 +14,7 @@ class Header extends Component {
     return (
       <div className="Header">
         <Link to="/">
-          <div>Inkredo</div>
+          <div>Home</div>
         </Link>
         {isLogged ? (
           <div className="top-right">
