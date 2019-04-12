@@ -70,7 +70,7 @@ export function getProfile(cb) {
       .then(response => response.json())
       .then(data => {
         dispatch({
-          type: Type.GET_USER,
+          type: Type.GET_PROFILE,
           employee: data.employee
         });
         cb(true);

@@ -2,8 +2,9 @@ import Type from "./types";
 
 // join company
 export function joinCompany(companyId, cb) {
+  // console.log(companyId, "front end test");
   return dispatch => {
-    fetch(Type.URL + "/companies" + companyId + "/join")
+    fetch(Type.URL + "/companies/" + companyId + "/join")
       .then(response => response.json())
       .then(data => {
         if (data) {
@@ -19,7 +20,7 @@ export function joinCompany(companyId, cb) {
 // leave Company
 export function leaveCompany(companyId, cb) {
   return dispatch => {
-    fetch(Type.URL + "/companies" + companyId + "/leave")
+    fetch(Type.URL + "/companies/" + companyId + "/leave")
       .then(response => response.json())
       .then(data => {
         if (data) {

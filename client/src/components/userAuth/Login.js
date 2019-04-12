@@ -20,9 +20,14 @@ class Login extends Component {
     this.props.dispatch(loginSubmit(this.state.userCred, this.redirectUser));
   };
 
-  redirectUser = success => {
+  redirectUser = (success, errorMsg = "") => {
+    console.log("post success:", success, errorMsg);
     if (success) {
       this.props.history.push("/");
+    } else {
+      this.setState({
+        error: errorMsg
+      });
     }
   };
 
@@ -68,10 +73,4 @@ class Login extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    isLogged: state.user.isLogged
-  };
-};
-
-export default connect(mapStateToProps)(Login);
+export default connect()(Login);

@@ -41,6 +41,7 @@ export function getSingleCompany(companyId, cb) {
 
 // get all companies
 export function getAllCompany(cb) {
+  console.log("raviravi");
   return dispatch => {
     fetch(Type.URL + "/companies")
       .then(response => response.json())
