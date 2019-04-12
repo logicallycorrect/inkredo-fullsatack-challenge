@@ -27,7 +27,7 @@ employeeSchema.pre("save", function(next) {
   var password = this.password;
   var self = this;
 
-  if (this.isModified(this.password)) return next();
+  if (!this.isModified("password")) return next();
 
   bcrypt.genSalt(SALT_FACTOR, function(err, salt) {
     bcrypt.hash(password, salt, function(err, hash) {

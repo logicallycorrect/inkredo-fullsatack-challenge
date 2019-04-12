@@ -38,6 +38,7 @@ module.exports = {
   },
 
   loginEmployee: function(req, res, next) {
+    console.log(req.body, "check ashish");
     passport.authenticate("local", function(err, employee, { message }) {
       if (err) {
         return next(err);
